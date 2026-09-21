@@ -16,3 +16,5 @@ __pycache__/
 Thumbs.db
 
 *.log
+config.py
+security.py
