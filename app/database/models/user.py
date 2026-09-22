@@ -1,7 +1,7 @@
 from ..database import Base
 from sqlalchemy.orm import mapped_column,Mapped,relationship
 from sqlalchemy.sql import func
-from sqlalchemy import String, Column, Integer, Float,ForeignKey,DateTime,Boolean,Text
+from sqlalchemy import String,ForeignKey,DateTime,Text
 from datetime import datetime
 
 class User(Base):
@@ -13,6 +13,8 @@ class User(Base):
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
     created_at:Mapped[datetime]=mapped_column(DateTime,server_default=func.now())
     profile: Mapped["UserProfile"] = relationship(back_populates="user",uselist=False)
+    goals: Mapped[list["Goal"]] = relationship(back_populates="user")
+    tasks: Mapped[list["Task"]] = relationship(back_populates="user")
 
 class UserProfile(Base):
     __tablename__ = "user_profiles"
