@@ -14,7 +14,8 @@ Authentication vs authorization
 RBAC
 Permissions
 Resource ownership
-Role/permission checks
+Role/permission checks - Done till here 
+
 Part C — OAuth
 OAuth2 concepts
 OpenID Connect
