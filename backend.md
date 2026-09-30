@@ -14,12 +14,12 @@ Authentication vs authorization
 RBAC
 Permissions
 Resource ownership
-Role/permission checks - Done till here 
+Role/permission checks 
 
 Part C — OAuth
 OAuth2 concepts
 OpenID Connect
-Google Login
+Google Login - Done till here 
 
 Part D — API Security
 SQL Injection
