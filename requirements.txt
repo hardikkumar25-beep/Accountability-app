@@ -9,3 +9,5 @@ httpcore
 certifi
 pwdlib[argon2]
 passlib
+pyjwt
+cryptography

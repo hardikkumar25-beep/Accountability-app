@@ -6,23 +6,26 @@ accountability_app/
 │   │
 │   ├── core/
 │   │   ├── config.py
-│   │   └── security.py
+│   │   ├── security.py
+|   |   ├──password.py ✅
+|   |   ├──dependencies.py ✅
 │   │
 │   ├── database/
-│   │   ├── database.py
+│   │   ├── database.py ✅
 │   │   └── models/
-│   │       ├── user.py
-│   │       ├── profile.py
+│   │       ├── user.py ✅
+│   │       ├── profile.py ✅
 │   │       ├── goal.py
 │   │       ├── task.py
 │   │       ├── task_event.py
 │   │       └── assessment.py
 │   │
 │   ├── schemas/
-│   │   ├── user.py
+│   │   ├── user.py ✅
 │   │   ├── profile.py
 │   │   ├── goal.py
 │   │   ├── task.py
+|   |   ├──token.py ✅
 │   │   └── assessment.py
 │   │
 │   ├── routers/
