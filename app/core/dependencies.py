@@ -18,8 +18,13 @@ def get_db():
 def get_user(db: Session, username: str):
     return db.query(User).filter(User.username == username).first()
 
-def authenticate_user(db :Session=Depends(get_db),username: str, password: str):
+def authenticate_user(db :Session,username: str, password: str):
     user=get_user(db,username)
     if not user:
         return False
+    if not verify_password(password,user.password_hash):
+        return False
+    return user
+
+
     
