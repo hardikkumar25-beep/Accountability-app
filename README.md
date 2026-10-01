@@ -29,7 +29,7 @@ accountability_app/
 │   │   └── assessment.py
 │   │
 │   ├── routers/
-│   │   ├── auth.py
+│   │   ├── auth.py ✅
 │   │   ├── users.py
 │   │   ├── goals.py
 │   │   ├── tasks.py
@@ -45,3 +45,8 @@ accountability_app/
 ├── alembic.ini
 ├── requirements.txt
 └── README.md
+
+
+uvicorn app.main:app --reload
+
+

@@ -1,9 +1,9 @@
-from pydantic import BaseModel,ConfigDict
+from pydantic import BaseModel,ConfigDict,EmailStr
 from datetime import datetime
 
 class UserCreate(BaseModel):
     username: str
-    email: str
+    email: EmailStr
     password:str
 
 class UserResponse(BaseModel):

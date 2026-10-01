@@ -4,7 +4,6 @@ from sqlalchemy.orm import Session
 from ..schemas.token import TokenData
 from ..database.models.user import User
 import jwt
-from jose import JWTError
 from ..core.password import verify_password,hash_password,create_access_token,ACCESS_TOKEN_EXPIRE_MINUTES,SECRET_KEY,ALGORITHM
 from fastapi import Depends,HTTPException,status
 
@@ -38,7 +37,7 @@ def get_current_user(db:Session=Depends(get_db),token:str=Depends(get_db)):
         if username is None:
             raise credentials_excp
         token_data=TokenData(username=username)
-    except JWTError:
+    except jwt.PyJWTError:
         raise credentials_excp
     user=get_user(db,username=token_data.username)
     if user is None:
