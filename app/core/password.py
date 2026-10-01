@@ -41,10 +41,11 @@ def create_refresh_token():
 def hash_refresh_token(token: str):
     return hashlib.sha256(token.encode()).hexdigest()
 
-def create_refresh_tok_record(db,user_id:int):
+def create_refresh_tok_record(db,user_id:int,family_id: str | None = None):
     raw_token=create_refresh_token()
     hash_tok=hash_refresh_token(raw_token)
-    family_id=str(uuid.uuid4())
+    if family_id is None:
+        family_id=str(uuid.uuid4())
     refresh_token=RefreshToken(
         user_id=user_id,
         token_hash=hash_tok,
